@@ -1,0 +1,137 @@
+/* Hero section styles */
+.hero {
+  min-height: 100vh;
+  padding: 120px 24px;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  will-change: transform;
+}
+
+@media (max-width: 992px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 100px 24px;
+  }
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+  margin-right: 60px;
+  will-change: transform, opacity;
+}
+
+@media (max-width: 992px) {
+  .hero-content {
+    margin-right: 0;
+    margin-bottom: 60px;
+  }
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  background: linear-gradient(180deg, #fff, rgba(255, 255, 255, 0.8));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: translateZ(0);
+  will-change: transform, opacity;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 40px;
+  line-height: 1.6;
+  letter-spacing: -0.022em;
+  will-change: transform, opacity;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 20px;
+  will-change: transform, opacity;
+}
+
+@media (max-width: 992px) {
+  .hero-cta {
+    justify-content: center;
+  }
+}
+
+.cta-button {
+  background-color: #fff;
+  color: #000;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateZ(0);
+}
+
+.cta-button:hover {
+  transform: translateY(-2px) translateZ(0);
+}
+
+.cta-link {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 12px 0;
+  position: relative;
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cta-link:hover {
+  color: #fff;
+}
+
+.cta-link::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #fff;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cta-link:hover::after {
+  width: 100%;
+}
+
+.hero-image {
+  flex: 1;
+  max-width: 600px;
+  will-change: transform, opacity;
+}
+
+.image-container {
+  border-radius: 16px;
+  overflow: hidden;
+  transform: translateZ(0);
+  will-change: transform, opacity;
+}
+
+.placeholder-image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: linear-gradient(135deg, #333, #111);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.2rem;
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  transform: translateZ(0);
+}
