@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import '../styles/Header.css';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,10 +33,10 @@ const Header = () => {
           <h1>DESIGN PORTFOLIO</h1>
         </Link>
         <nav className="nav-links">
-          <Link to="/" className="nav-link">首页</Link>
-          <Link to="/works" className="nav-link">作品</Link>
-          <Link to="/about" className="nav-link">关于我</Link>
-          <Link to="/contact" className="nav-link">联系</Link>
+          <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>首页</Link>
+          <Link to="/works" className={`nav-link ${location.pathname === '/works' ? 'active' : ''}`}>作品</Link>
+          <Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}>关于我</Link>
+          <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}>联系</Link>
         </nav>
       </div>
     </motion.header>

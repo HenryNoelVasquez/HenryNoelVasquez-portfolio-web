@@ -4,6 +4,7 @@ import Hero from './components/Hero'
 import About from './components/About'
 import Works from './components/Works'
 import ProjectDetail from './components/ProjectDetail'
+import Contact from './components/Contact'
 import './App.css'
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         } />
         <Route path="/works" element={<Works />} />
         <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/project/:id" element={<ProjectDetail />} />
       </Routes>
     </Router>

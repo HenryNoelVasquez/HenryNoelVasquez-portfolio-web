@@ -5,7 +5,7 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 20px 0;
+  padding: 15px 0;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   background-color: rgba(29, 29, 31, 0.72);
   backdrop-filter: saturate(180%) blur(20px);
@@ -65,6 +65,15 @@
 }
 
 .nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: #fff;
+  font-weight: 500;
+}
+
+.nav-link.active::after {
   width: 100%;
 }
 
