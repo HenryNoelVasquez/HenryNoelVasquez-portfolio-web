@@ -5,6 +5,10 @@
   color: #fff;
   min-height: 100vh;
   overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
 }
 
 .project-detail-container {

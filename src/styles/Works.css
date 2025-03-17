@@ -4,6 +4,10 @@
   background-color: #000;
   color: #fff;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .works-container {

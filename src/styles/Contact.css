@@ -36,12 +36,9 @@
 }
 
 .contact-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 60px;
-  width: 100%;
 }
 
 .contact-info-centered {
@@ -57,6 +54,7 @@
 
 @media (max-width: 992px) {
   .contact-content {
+    grid-template-columns: 1fr;
     gap: 40px;
   }
 }
@@ -144,9 +142,6 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
-  max-width: 600px;
-  width: 100%;
-  margin: 0 auto;
 }
 
 .info-title {
