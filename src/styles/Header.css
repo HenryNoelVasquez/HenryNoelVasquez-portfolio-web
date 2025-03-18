@@ -87,3 +87,26 @@
     gap: 20px;
   }
 }
+
+@media (max-width: 576px) {
+  .header {
+    padding: 12px 0;
+  }
+  
+  .header-container {
+    padding: 0 16px;
+  }
+  
+  .logo h1 {
+    font-size: 1rem;
+  }
+  
+  .nav-links {
+    gap: 15px;
+  }
+  
+  .nav-link {
+    font-size: 0.8rem;
+    padding: 6px 0;
+  }
+}
