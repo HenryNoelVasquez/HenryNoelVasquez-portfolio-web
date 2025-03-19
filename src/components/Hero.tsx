@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import SplitText from '../components/SplitText'
+import ShinyText from '../components/ShinyText'
 import '../styles/Hero.css';
 const Hero = () => {
   const handleAnimationComplete = () => {
@@ -28,7 +29,10 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1], delay: 0.2 }}
           >
-            专注于用户体验与界面设计，打造令人惊艳的数字产品
+            <ShinyText
+              text="专注于用户体验与界面设计，打造令人惊艳的数字产品"
+              speed={3}
+            />
           </motion.p>
           <motion.div
             className="hero-cta"
