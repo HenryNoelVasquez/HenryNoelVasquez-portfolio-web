@@ -1,11 +1,5 @@
 import '../styles/ShinyText.css'
-
-interface ShinyTextProps {
-  text: string
-  disabled?: boolean
-  speed?: number
-  className?: string
-}
+import { ShinyTextProps } from '../types'
 
 const ShinyText: React.FC<ShinyTextProps> = ({
   text,

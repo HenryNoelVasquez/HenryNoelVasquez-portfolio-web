@@ -1,12 +1,13 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { ProjectPreview } from '../types';
 import '../styles/Works.css';
 import ScrollFloat from '../components/ScrollFloat'
 
 
 const Works = () => {
   // 模拟作品数据，实际项目中可以从API获取或使用CMS
-  const projects = [
+  const projects: ProjectPreview[] = [
     { id: 1, title: '移动应用UI设计', category: 'UI/UX' },
     { id: 2, title: '品牌重塑项目', category: '品牌设计' },
     { id: 3, title: '电商网站设计', category: 'Web设计' },

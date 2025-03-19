@@ -1,6 +1,7 @@
 import { useSprings, animated } from '@react-spring/web'
 import { useEffect, useRef, useState } from 'react'
 import { createGlobalStyle } from 'styled-components'
+import { SplitTextProps } from '../types'
 
 // 添加全局样式以支持响应式字体大小
 // 使用函数调用方式创建全局样式，避免TypeScript类型错误
@@ -21,22 +22,6 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 `
-
-interface SplitTextProps {
-  text?: string
-  className?: string
-  delay?: number
-  animationFrom?: { opacity: number; transform: string }
-  animationTo?: { opacity: number; transform: string }
-  easing?: (t: number) => number
-  threshold?: number
-  rootMargin?: string
-  textAlign?: 'left' | 'right' | 'center' | 'justify' | 'initial' | 'inherit'
-  fontSize?: string
-  fontWeight?: string | number
-  responsive?: boolean
-  onLetterAnimationComplete?: () => void
-}
 
 const SplitText: React.FC<SplitTextProps> = ({
   text = '',

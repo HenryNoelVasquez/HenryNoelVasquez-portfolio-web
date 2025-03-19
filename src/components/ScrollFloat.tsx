@@ -1,22 +1,11 @@
-import React, { useEffect, useMemo, useRef, ReactNode, RefObject } from 'react'
+import React, { useEffect, useMemo, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { ScrollFloatProps } from '../types'
 
 import '../styles/ScrollFloat.css'
 
 gsap.registerPlugin(ScrollTrigger)
-
-interface ScrollFloatProps {
-  children: ReactNode
-  scrollContainerRef?: RefObject<HTMLElement>
-  containerClassName?: string
-  textClassName?: string
-  animationDuration?: number
-  ease?: string
-  scrollStart?: string
-  scrollEnd?: string
-  stagger?: number
-}
 
 const ScrollFloat: React.FC<ScrollFloatProps> = ({
   children,

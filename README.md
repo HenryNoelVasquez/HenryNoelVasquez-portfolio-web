@@ -1,54 +1,47 @@
-# React + TypeScript + Vite
+# ✨ 设计作品集网站 ✨
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![首页截图](./src/assets/homepage-screenshot.png)
 
-Currently, two official plugins are available:
+## 🎨 项目简介
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+一个专注于用户体验与界面设计的作品集网站，展示创意设计和数字产品。通过精美的布局和流畅的交互，为访问者带来愉悦的浏览体验！
 
-## Expanding the ESLint configuration
+## 🚀 技术栈
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- ⚛️ **React** + **TypeScript** + **Vite** - 现代前端开发框架
+- 🌈 **Framer Motion** - 强大的动效库，带来流畅的动画体验
+- 📱 **响应式设计** - 完美适配各种设备屏幕
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## ✨ 项目特点
+
+- 🎯 **简约美学** - 极简设计风格，突出作品展示
+- 🔥 **流畅动效** - 精心设计的过渡动画，提升用户体验
+- 🌐 **跨设备兼容** - 从手机到桌面，始终保持最佳视觉效果
+- 🔍 **作品详情** - 深入展示设计理念与实现过程
+
+## 🔧 快速开始
+
+```bash
+# 安装依赖
+yarn install
+
+# 启动开发服务器
+yarn dev
+
+# 构建生产版本
+yarn build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📝 项目结构
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
 ```
+src/
+├── assets/     # 静态资源文件
+├── components/ # 可复用组件
+├── styles/     # 样式文件
+└── types/      # TypeScript类型定义
+```
+
+---
+
+💻 **设计与开发** | 🌟 **创意无限**

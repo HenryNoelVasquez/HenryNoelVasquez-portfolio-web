@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
+import { HeaderProps } from '../types';
 import '../styles/Header.css';
 
-const Header = () => {
+const Header: React.FC<HeaderProps> = ({ className }) => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
@@ -23,7 +24,7 @@ const Header = () => {
 
   return (
     <motion.header 
-      className={`header ${scrolled ? 'scrolled' : ''}`}
+      className={`header ${scrolled ? 'scrolled' : ''} ${className || ''}`}
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}

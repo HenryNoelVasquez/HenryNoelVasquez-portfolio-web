@@ -1,20 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { Project } from '../types';
 import '../styles/ProjectDetail.css';
-
-interface Project {
-  id: number;
-  title: string;
-  category: string;
-  description?: string;
-  fullDescription?: string;
-  challenge?: string;
-  solution?: string;
-  result?: string;
-  images?: string[];
-  mainImage?: string;
-}
 
 const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>();

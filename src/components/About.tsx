@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
+import { Skill } from '../types';
 import '../styles/About.css';
 
 const About = () => {
-  const skills = [
+  const skills: Skill[] = [
     { id: 1, name: 'UI设计', level: 95 },
     { id: 2, name: 'UX设计', level: 90 },
     { id: 3, name: '品牌设计', level: 85 },

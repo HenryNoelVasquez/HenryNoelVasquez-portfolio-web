@@ -2,8 +2,9 @@ import { motion } from 'framer-motion';
 import SplitText from '../components/SplitText'
 import ShinyText from '../components/ShinyText'
 import '../styles/Hero.css';
+
 const Hero = () => {
-  const handleAnimationComplete = () => {
+  const handleAnimationComplete = (): void => {
     console.log('All letters have animated!')
   }
   return (
@@ -64,6 +65,6 @@ const Hero = () => {
       </div>
     </section>
   )
-};
+}
 
 export default Hero;
