@@ -3,7 +3,8 @@ import { useEffect, useRef, useState } from 'react'
 import { createGlobalStyle } from 'styled-components'
 
 // 添加全局样式以支持响应式字体大小
-const GlobalStyle = createGlobalStyle`
+// 使用函数调用方式创建全局样式，避免TypeScript类型错误
+const GlobalStyles = createGlobalStyle`
   .split-parent {
     font-size: var(--font-size-base, 4rem);
   }
@@ -139,9 +140,11 @@ const SplitText: React.FC<SplitTextProps> = ({
     } as React.CSSProperties
   }
 
+  // 使用重命名后的GlobalStyles组件
+  
   return (
     <>
-      <GlobalStyle />
+      <GlobalStyles />
       <p
         ref={ref}
         className={`split-parent ${className}`}
