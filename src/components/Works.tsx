@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import '../styles/Works.css';
+import ScrollFloat from '../components/ScrollFloat'
+
 
 const Works = () => {
   // 模拟作品数据，实际项目中可以从API获取或使用CMS
@@ -16,16 +18,24 @@ const Works = () => {
   return (
     <section id="works" className="works-section">
       <div className="works-container">
-        <motion.h2 
+        <motion.h2
           className="section-title"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          精选作品
+          <ScrollFloat
+            animationDuration={1}
+            ease="back.inOut(2)"
+            scrollStart="center bottom+=10%"
+            scrollEnd="bottom bottom-=10%"
+            stagger={0.03}
+          >
+            精选作品
+          </ScrollFloat>
         </motion.h2>
-        <motion.p 
+        <motion.p
           className="section-subtitle"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -34,10 +44,10 @@ const Works = () => {
         >
           探索我的设计作品集，了解我如何通过设计解决问题
         </motion.p>
-        
+
         <div className="works-grid">
           {projects.map((project, index) => (
-            <motion.div 
+            <motion.div
               key={project.id}
               className="work-item"
               initial={{ opacity: 0, y: 30 }}
@@ -62,7 +72,7 @@ const Works = () => {
         </div>
       </div>
     </section>
-  );
+  )
 };
 
 export default Works;

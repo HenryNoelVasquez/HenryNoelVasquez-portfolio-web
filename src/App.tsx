@@ -7,6 +7,7 @@ import Works from './components/Works'
 import ProjectDetail from './components/ProjectDetail'
 import Contact from './components/Contact'
 import './App.css'
+import SplashCursor from './components/SplashCursor'
 
 // 滚动重置组件
 function ScrollToTop() {
@@ -25,18 +26,22 @@ function App() {
       <ScrollToTop />
       <Header />
       <Routes>
-        <Route path="/" element={
-          <>
-            <Hero />
-            <About />
-            <Works />
-          </>
-        } />
+        <Route
+          path="/"
+          element={
+            <>
+              <Hero />
+              <About />
+              <Works />
+            </>
+          }
+        />
         <Route path="/works" element={<Works />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/project/:id" element={<ProjectDetail />} />
       </Routes>
+      <SplashCursor />
     </Router>
   )
 }

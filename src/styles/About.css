@@ -1,12 +1,26 @@
 /* About section styles */
 .about-section {
-  padding: 100px 24px;
+  padding: 100px 16px;
   background-color: #000;
   color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+@media (max-width: 576px) {
+  .about-section {
+    padding: 80px 12px;
+  }
+
+  .about-container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
 }
 
 .about-container {

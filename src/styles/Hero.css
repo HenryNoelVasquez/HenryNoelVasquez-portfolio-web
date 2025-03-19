@@ -1,7 +1,7 @@
 /* Hero section styles */
 .hero {
   min-height: 100vh;
-  padding: 140px 24px 80px;
+  padding: 140px 16px 80px;
   background-color: #000;
   color: #fff;
   overflow: hidden;
@@ -25,18 +25,39 @@
 
 @media (max-width: 992px) {
   .hero {
-    padding: 100px 24px;
+    padding: 100px 12px;
   }
   
   .hero-container {
     flex-direction: column;
     text-align: center;
+    padding: 0;
   }
 }
 
+@media (max-width: 576px) {
+  .hero {
+    padding: 80px 12px;
+  }
+  
+  .hero-container {
+    width: 100%;
+    max-width: calc(100% - 24px);
+  }
+  
+  .hero-content {
+    margin-bottom: 40px;
+  }
+  
+  .hero-title {
+    font-size: 2.25rem;
+    margin-bottom: 20px;
+  }
+}
 .hero-content {
   flex: 1;
-  max-width: 800px;
+  width: 100%;
+  max-width: min(800px, 100%);
   margin: 0 auto 60px;
   will-change: transform, opacity;
 }

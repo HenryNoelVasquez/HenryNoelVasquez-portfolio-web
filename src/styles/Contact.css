@@ -3,12 +3,19 @@
   padding: 120px 24px;
   background-color: #000;
   color: #fff;
-  overflow: hidden;
+  overflow-x: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
+@media (max-width: 576px) {
+  .contact-section {
+    padding: 80px 16px;
+  }
+}
 .contact-container {
   max-width: 800px;
   margin: 0 auto;

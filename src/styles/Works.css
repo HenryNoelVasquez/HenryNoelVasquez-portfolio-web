@@ -3,11 +3,21 @@
   padding: 100px 24px;
   background-color: #000;
   color: #fff;
-  overflow: hidden;
+  overflow-x: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 576px) {
+  .works-section {
+    padding: 80px 16px;
+  }
+  .works-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .works-container {
