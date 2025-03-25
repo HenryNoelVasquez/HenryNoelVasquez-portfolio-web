@@ -1,3 +1,53 @@
+# ✨ Design Portfolio Website ✨
+
+![Homepage Screenshot](./src/assets/homepage-screenshot.png)
+
+A modern, responsive portfolio website showcasing creative design and digital products. Built with React, TypeScript, and Framer Motion, this website features smooth animations and an elegant user interface.
+
+## 🌐 Live Demo
+
+🔗 **Live Preview**: [http://101.37.85.94:8889/](http://101.37.85.94:8889/)
+
+You can experience the website directly through the link above, no local deployment needed!
+
+## 🌟 Key Features
+
+- 🎯 **Minimalist Design** - Clean and focused presentation of works
+- 🔥 **Smooth Animations** - Carefully crafted transitions and interactions
+- 🌐 **Responsive Layout** - Perfect display across all devices
+- 🎨 **Portfolio Showcase** - Detailed presentation of design concepts and processes
+
+## 🛠️ Tech Stack
+
+- ⚛️ **React** + **TypeScript** + **Vite** - Modern frontend development framework
+- 🌈 **Framer Motion** - Powerful animation library for smooth transitions
+- 📱 **Responsive Design** - Perfect adaptation to various screen sizes
+
+## 🚀 Quick Start
+
+```bash
+# Install dependencies
+yarn install
+
+# Start development server
+yarn dev
+
+# Build for production
+yarn build
+```
+
+## 📁 Project Structure
+
+```
+src/
+├── assets/     # Static assets
+├── components/ # Reusable components
+├── styles/     # Style files
+└── types/      # TypeScript type definitions
+```
+
+---
+
 # ✨ 设计作品集网站 ✨
 
 ![首页截图](./src/assets/homepage-screenshot.png)
