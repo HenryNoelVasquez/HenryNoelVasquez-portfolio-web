@@ -1,6 +1,9 @@
 # ✨ Design Portfolio Website ✨
 
-![Homepage Screenshot](./src/assets/homepage-screenshot.png)
+<div align="center">
+  <img src="./src/assets/black.jpg" alt="Dark Mode Screenshot" width="48%" />
+  <img src="./src/assets/white.jpg" alt="Light Mode Screenshot" width="48%" />
+</div>
 
 A modern, responsive portfolio website showcasing creative design and digital products. Built with React, TypeScript, and Framer Motion, this website features smooth animations and an elegant user interface.
 
@@ -16,6 +19,7 @@ You can experience the website directly through the link above, no local deploym
 - 🔥 **Smooth Animations** - Carefully crafted transitions and interactions
 - 🌐 **Responsive Layout** - Perfect display across all devices
 - 🎨 **Portfolio Showcase** - Detailed presentation of design concepts and processes
+- 🌓 **Dark/Light Mode** - Switch between dark and light themes for comfortable viewing
 
 ## 🛠️ Tech Stack
 
@@ -50,6 +54,7 @@ src/
 
 # ✨ 设计作品集网站 ✨
 
+
 ## 🌐 在线预览
 
 🔗 **项目预览地址**: [http://101.37.85.94:8889/](http://101.37.85.94:8889/)
@@ -72,6 +77,7 @@ src/
 - 🔥 **流畅动效** - 精心设计的过渡动画，提升用户体验
 - 🌐 **跨设备兼容** - 从手机到桌面，始终保持最佳视觉效果
 - 🔍 **作品详情** - 深入展示设计理念与实现过程
+- 🌓 **深色/浅色模式** - 支持在深色和浅色主题间切换，提供舒适的浏览体验
 
 ## 🔧 快速开始
 
