@@ -1,8 +1,8 @@
 /* Project Detail styles */
 .project-detail-section {
   padding: 120px 24px 80px;
-  background-color: #000;
-  color: #fff;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   min-height: 100vh;
   overflow-x: hidden;
   display: flex;
@@ -10,6 +10,7 @@
   align-items: flex-start;
   width: 100%;
   box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 @media (max-width: 576px) {
@@ -31,18 +32,18 @@
 }
 
 .back-link {
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-color-secondary);
   font-size: 1rem;
   display: inline-flex;
   align-items: center;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease, background-color 0.3s ease;
   padding: 8px 16px;
   border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: var(--card-bg-color);
 }
 
 .back-link:hover {
-  color: #fff;
+  color: var(--text-color);
 }
 
 .back-arrow {
@@ -54,16 +55,18 @@
   font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 16px;
-  background: linear-gradient(180deg, #fff, rgba(255, 255, 255, 0.8));
+  background: linear-gradient(180deg, var(--gradient-start), var(--gradient-end));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: -0.03em;
   line-height: 1.1;
+  transition: background 0.3s ease;
 }
 
 .project-category {
   font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-color-secondary);
+  transition: color 0.3s ease;
 }
 
 .project-main-image {
@@ -76,13 +79,14 @@
 .placeholder-image {
   width: 100%;
   aspect-ratio: 16/9;
-  background: linear-gradient(135deg, #333, #111);
+  background: linear-gradient(135deg, #333, var(--bg-color-secondary));
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-color-secondary);
   font-size: 1.2rem;
-  border: 1px dashed rgba(255, 255, 255, 0.3);
+  border: 1px dashed var(--border-color);
+  transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
 }
 
 .placeholder-image.large {
@@ -109,13 +113,16 @@
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 24px;
+  color: var(--text-color);
+  transition: color 0.3s ease;
 }
 
 .project-description p {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-color-secondary);
   margin-bottom: 40px;
+  transition: color 0.3s ease;
 }
 
 .project-details {
@@ -128,12 +135,15 @@
   font-size: 1.3rem;
   font-weight: 600;
   margin-bottom: 12px;
+  color: var(--text-color);
+  transition: color 0.3s ease;
 }
 
 .detail-item p {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-color-secondary);
+  transition: color 0.3s ease;
 }
 
 .gallery-grid {
@@ -173,6 +183,8 @@
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 40px;
+  color: var(--text-color);
+  transition: color 0.3s ease;
 }
 
 .next-project-grid {
@@ -190,19 +202,21 @@
 .next-project-item {
   border-radius: 12px;
   overflow: hidden;
-  background-color: rgba(255, 255, 255, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--card-bg-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .next-project-item:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 40px var(--shadow-color);
 }
 
 .next-project-item h4 {
   padding: 16px;
   font-size: 1.1rem;
   font-weight: 500;
+  color: var(--text-color);
+  transition: color 0.3s ease;
 }
 
 /* Loading spinner */
@@ -211,16 +225,18 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #000;
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease;
 }
 
 .loading-spinner {
   width: 50px;
   height: 50px;
-  border: 3px solid rgba(255, 255, 255, 0.1);
+  border: 3px solid var(--border-color);
   border-radius: 50%;
-  border-top-color: #fff;
+  border-top-color: var(--text-color);
   animation: spin 1s ease-in-out infinite;
+  transition: border 0.3s ease;
 }
 
 @keyframes spin {
@@ -234,36 +250,41 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #000;
-  color: #fff;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   text-align: center;
   padding: 0 24px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .project-not-found h2 {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 16px;
+  color: var(--text-color);
+  transition: color 0.3s ease;
 }
 
 .project-not-found p {
   font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-color-secondary);
   margin-bottom: 30px;
   max-width: 500px;
+  transition: color 0.3s ease;
 }
 
 .back-button {
-  background-color: #fff;
-  color: #000;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
   padding: 12px 28px;
   border-radius: 30px;
   font-weight: 500;
   font-size: 1rem;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease, background-color 0.3s ease, color 0.3s ease, opacity 0.3s ease;
 }
 
 .back-button:hover {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: var(--button-bg-color);
+  opacity: 0.9;
   transform: translateY(-2px);
 }

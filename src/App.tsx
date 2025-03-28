@@ -6,6 +6,7 @@ import About from './components/About'
 import Works from './components/Works'
 import ProjectDetail from './components/ProjectDetail'
 import Contact from './components/Contact'
+import { ThemeProvider } from './context/ThemeContext'
 import './App.css'
 import SplashCursor from './components/SplashCursor'
 
@@ -22,27 +23,30 @@ function ScrollToTop() {
 
 function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <Header />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Hero />
-              <About />
-              <Works />
-            </>
-          }
-        />
-        <Route path="/works" element={<Works />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/project/:id" element={<ProjectDetail />} />
-      </Routes>
-      <SplashCursor />
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <ScrollToTop />
+        <Header />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero />
+                <About />
+                <Works />
+                <Contact />
+              </>
+            }
+          />
+          <Route path="/works" element={<Works />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/project/:id" element={<ProjectDetail />} />
+        </Routes>
+        <SplashCursor />
+      </Router>
+    </ThemeProvider>
   )
 }
 

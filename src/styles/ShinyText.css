@@ -13,6 +13,20 @@
   animation: shine 5s linear infinite;
 }
 
+/* 为浅色模式添加不同的渐变颜色 */
+[data-theme='light'] .shiny-text {
+  background: linear-gradient(
+    120deg,
+    rgba(0, 0, 0, 0) 40%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 0) 60%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 200% 100%;
+  animation: shine 5s linear infinite;
+}
+
 @keyframes shine {
   0% {
     background-position: 100%;

@@ -1,0 +1,51 @@
+/* 默认变量（深色模式）*/
+:root {
+  /* 全局过渡效果 */
+  --transition-speed: 0.3s;
+  --transition-timing: ease;
+  
+  /* 深色模式颜色 */
+  --bg-color: #000;
+  --bg-color-secondary: #111;
+  --text-color: rgba(255, 255, 255, 0.87);
+  --text-color-secondary: rgba(255, 255, 255, 0.7);
+  --accent-color: #fff;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --card-bg-color: rgba(255, 255, 255, 0.05);
+  --card-hover-bg-color: rgba(255, 255, 255, 0.08);
+  --button-bg-color: #fff;
+  --button-text-color: #000;
+  --icon-color: rgba(255, 255, 255, 0.9);
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --gradient-start: #fff;
+  --gradient-end: rgba(255, 255, 255, 0.8);
+  --header-bg-color: rgba(29, 29, 31, 0.72);
+  --header-scrolled-bg-color: rgba(29, 29, 31, 0.92);
+  
+  /* 所有颜色属性的统一过渡效果 */
+  transition: 
+    background-color var(--transition-speed) var(--transition-timing),
+    color var(--transition-speed) var(--transition-timing),
+    border-color var(--transition-speed) var(--transition-timing),
+    box-shadow var(--transition-speed) var(--transition-timing);
+}
+
+/* 浅色模式变量 */
+[data-theme='light'] {
+  --bg-color: #f8f9fa;
+  --bg-color-secondary: #ffffff;
+  --text-color: rgba(0, 0, 0, 0.87);
+  --text-color-secondary: rgba(0, 0, 0, 0.6);
+  --accent-color: #000;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --card-bg-color: rgba(0, 0, 0, 0.03);
+  --card-hover-bg-color: rgba(0, 0, 0, 0.05);
+  --button-bg-color: #000;
+  --button-text-color: #fff;
+  --icon-color: rgba(0, 0, 0, 0.8);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --gradient-start: #000;
+  --gradient-end: rgba(0, 0, 0, 0.8);
+  --header-bg-color: rgba(255, 255, 255, 0.85);
+  --header-scrolled-bg-color: rgba(255, 255, 255, 0.95);
+} 

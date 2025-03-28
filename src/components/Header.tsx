@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { HeaderProps } from '../types';
+import ThemeToggle from './ThemeToggle';
 import '../styles/Header.css';
 
 const Header: React.FC<HeaderProps> = ({ className }) => {
@@ -38,6 +39,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           <Link to="/works" className={`nav-link ${location.pathname === '/works' ? 'active' : ''}`}>作品</Link>
           <Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}>关于我</Link>
           <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}>联系</Link>
+          <ThemeToggle />
         </nav>
       </div>
     </motion.header>

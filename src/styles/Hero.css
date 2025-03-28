@@ -2,8 +2,8 @@
 .hero {
   min-height: 100vh;
   padding: 140px 16px 80px;
-  background-color: #000;
-  color: #fff;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   overflow: hidden;
   will-change: transform;
   display: flex;
@@ -12,6 +12,7 @@
   justify-content: center;
   width: 100%;
   position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .hero-container {
@@ -75,11 +76,12 @@
   margin-bottom: 24px;
   line-height: 1.1;
   letter-spacing: -0.03em;
-  background: linear-gradient(180deg, #fff, rgba(255, 255, 255, 0.8));
+  background: linear-gradient(180deg, var(--gradient-start), var(--gradient-end));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transform: translateZ(0);
   will-change: transform, opacity;
+  transition: background 0.3s ease;
 }
 
 @media (max-width: 768px) {
@@ -96,11 +98,12 @@
 
 .hero-subtitle {
   font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-color-secondary);
   margin-bottom: 40px;
   line-height: 1.6;
   letter-spacing: -0.022em;
   will-change: transform, opacity;
+  transition: color 0.3s ease;
 }
 
 @media (max-width: 768px) {
@@ -139,13 +142,13 @@
 }
 
 .cta-button {
-  background-color: #fff;
-  color: #000;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
   padding: 12px 28px;
   border-radius: 30px;
   font-weight: 500;
   font-size: 1rem;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease, color 0.3s ease;
   transform: translateZ(0);
 }
 
@@ -164,7 +167,7 @@
 }
 
 .cta-link {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-color-secondary);
   font-size: 1rem;
   font-weight: 400;
   padding: 12px 0;
@@ -173,7 +176,7 @@
 }
 
 .cta-link:hover {
-  color: #fff;
+  color: var(--text-color);
 }
 
 .cta-link::after {
@@ -183,12 +186,29 @@
   left: 0;
   width: 0;
   height: 1px;
-  background-color: #fff;
-  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: var(--accent-color);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease;
 }
 
 .cta-link:hover::after {
   width: 100%;
+}
+
+.file-downloader {
+  margin-left: 10px;
+}
+
+.file-description {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: var(--text-color-secondary);
+}
+
+@media (max-width: 768px) {
+  .file-downloader {
+    margin-left: 0;
+    margin-top: 15px;
+  }
 }
 
 .hero-image {
@@ -204,17 +224,28 @@
   overflow: hidden;
   transform: translateZ(0);
   will-change: transform, opacity;
+  transition: box-shadow 0.3s ease;
 }
 
 .placeholder-image {
   width: 100%;
   aspect-ratio: 16/9;
-  background: linear-gradient(135deg, #333, #111);
+  background: linear-gradient(135deg, #333, var(--bg-color-secondary));
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-color-secondary);
   font-size: 1.2rem;
-  border: 1px dashed rgba(255, 255, 255, 0.3);
+  border: 1px dashed var(--border-color);
+  transform: translateZ(0);
+  transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+.hero-actual-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 16/9;
   transform: translateZ(0);
 }
