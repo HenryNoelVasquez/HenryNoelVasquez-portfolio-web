@@ -106,13 +106,6 @@ export interface ShinyTextProps {
   className?: string
 }
 
-// About组件相关类型
-export interface Skill {
-  id: number
-  name: string
-  level: number
-}
-
 // Works组件相关类型
 export interface ProjectPreview {
   id: number
