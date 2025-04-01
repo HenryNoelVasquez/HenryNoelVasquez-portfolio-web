@@ -8,12 +8,12 @@ import ScrollFloat from '../components/ScrollFloat'
 const Works = () => {
   // 模拟作品数据，实际项目中可以从API获取或使用CMS
   const projects: ProjectPreview[] = [
-    { id: 1, title: '移动应用UI设计', category: 'UI/UX' },
-    { id: 2, title: '品牌重塑项目', category: '品牌设计' },
-    { id: 3, title: '电商网站设计', category: 'Web设计' },
-    { id: 4, title: '数据可视化界面', category: 'UI/UX' },
-    { id: 5, title: '社交媒体营销设计', category: '品牌设计' },
-    { id: 6, title: '响应式网站原型', category: 'Web设计' },
+    { id: 1, title: 'Fandom', category: 'UI/UX', images: new URL('../assets/fandom/fandom04.jpg', import.meta.url).href },
+    { id: 2, title: 'Easy Talk', category: '品牌设计', images: new URL('../assets/easTalk/easy15.jpg', import.meta.url).href },
+    { id: 3, title: '电商网站设计', category: 'Web设计', images: '' },
+    { id: 4, title: '数据可视化界面', category: 'UI/UX', images: '' },
+    { id: 5, title: '社交媒体营销设计', category: '品牌设计', images: '' },
+    { id: 6, title: '响应式网站原型', category: 'Web设计', images: '' },
   ];
 
   return (
@@ -58,10 +58,13 @@ const Works = () => {
             >
               <Link to={`/project/${project.id}`} className="work-item-link">
                 <div className="work-image">
-                  {/* 这里预留放置项目图片的位置 */}
-                  <div className="placeholder-image">
-                    <span>项目图片</span>
-                  </div>
+                  {project.images ? (
+                    <img src={project.images} alt={project.title} />
+                  ) : (
+                    <div className="placeholder-image">
+                      <span>项目图片</span>
+                    </div>
+                  )}
                 </div>
                 <div className="work-info">
                   <h3 className="work-title">{project.title}</h3>

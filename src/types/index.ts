@@ -111,6 +111,7 @@ export interface ProjectPreview {
   id: number
   title: string
   category: string
+  images:string
 }
 
 // Contact组件相关类型
