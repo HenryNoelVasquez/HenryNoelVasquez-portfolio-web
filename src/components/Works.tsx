@@ -8,13 +8,34 @@ import ScrollFloat from '../components/ScrollFloat'
 const Works = () => {
   // 模拟作品数据，实际项目中可以从API获取或使用CMS
   const projects: ProjectPreview[] = [
-    { id: 1, title: 'Fandom', category: 'UI/UX', images: new URL('../assets/fandom/fandom04.jpg', import.meta.url).href },
-    { id: 2, title: 'Easy Talk', category: '品牌设计', images: new URL('../assets/easTalk/easy15.jpg', import.meta.url).href },
-    { id: 3, title: '电商网站设计', category: 'Web设计', images: '' },
-    { id: 4, title: '数据可视化界面', category: 'UI/UX', images: '' },
+    {
+      id: 1,
+      title: 'Fandom',
+      category: 'UI/UX',
+      images: new URL('../assets/fandom/fandom04.jpg', import.meta.url).href,
+    },
+    {
+      id: 2,
+      title: 'Easy Talk',
+      category: '品牌设计',
+      images: new URL('../assets/easTalk/easy15.jpg', import.meta.url).href,
+    },
+    {
+      id: 3,
+      title: 'fandomWeb',
+      category: 'Web设计',
+      images: new URL('../assets/fandomweb/fandomweb26.jpg', import.meta.url)
+        .href,
+    },
+    { 
+      id: 4, 
+      title: '品牌设计', 
+      category: '品牌设计', 
+      images: new URL('../assets/graphicDesign/graphicDesign29.jpg', import.meta.url).href 
+    },
     { id: 5, title: '社交媒体营销设计', category: '品牌设计', images: '' },
     { id: 6, title: '响应式网站原型', category: 'Web设计', images: '' },
-  ];
+  ]
 
   return (
     <section id="works" className="works-section">

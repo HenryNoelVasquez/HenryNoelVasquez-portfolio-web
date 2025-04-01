@@ -15,7 +15,16 @@
 
 @media (max-width: 576px) {
   .project-detail-section {
-    padding: 80px 16px;
+    padding: 80px 16px 40px;
+  }
+
+  .back-link-container {
+    margin-bottom: 30px;
+    margin-top: 20px;
+  }
+
+  .back-link {
+    padding: 10px 16px;
   }
 }
 .project-detail-container {
@@ -146,13 +155,59 @@
   transition: color 0.3s ease;
 }
 
+/* Updated gallery grid for adaptive display */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 16px;
+  margin-top: 20px;
 }
 
-@media (max-width: 768px) {
+.gallery-item {
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: zoom-in;
+  position: relative;
+  will-change: transform;
+  transform: translateZ(0);
+  aspect-ratio: 3/2;
+  background: #f5f5f5;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.gallery-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+}
+
+.loading-spinner.small {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #e0e0e0;
+  border-top-color: #333;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 992px) {
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -164,14 +219,14 @@
   }
 }
 
-.gallery-item {
+.placeholder-gallery {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
   border-radius: 8px;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-}
-
-.gallery-item:hover {
-  transform: scale(1.03);
 }
 
 .next-project {
@@ -431,7 +486,7 @@
 }
 
 .fullscreen-close {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.4);
   color: white;
   border: none;
   width: 40px;
@@ -443,14 +498,14 @@
 }
 
 .fullscreen-close:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 /* Minimalist zoom controls - moved to bottom left */
 .zoom-controls {
   display: flex;
   align-items: center;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.4);
   padding: 5px 10px;
   border-radius: 20px;
   color: white;
@@ -473,7 +528,7 @@
 }
 
 .zoom-controls button:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .zoom-controls button:disabled {
@@ -524,7 +579,7 @@
 }
 
 .fullscreen-nav {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.4);
   color: white;
   border: none;
   width: 40px;
@@ -536,14 +591,14 @@
 }
 
 .fullscreen-nav:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .fullscreen-counter {
   position: absolute;
   bottom: 20px;
   right: 20px;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.4);
   color: white;
   padding: 8px 15px;
   border-radius: 20px;

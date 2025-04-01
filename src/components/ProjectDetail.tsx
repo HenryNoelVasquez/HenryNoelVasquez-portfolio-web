@@ -11,8 +11,38 @@ const ProjectDetail = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [fullscreenView, setFullscreenView] = useState(false);
   const [zoomLevel, setZoomLevel] = useState(1);
-  const autoPlayIntervalRef = useRef<number | null>(null);
+  const [visibleImages, setVisibleImages] = useState<number[]>([]);
+  const observerRef = useRef<IntersectionObserver | null>(null);
   
+  // 初始化 Intersection Observer
+  useEffect(() => {
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = parseInt(entry.target.getAttribute('data-index') || '0');
+            setVisibleImages(prev => [...new Set([...prev, index])]);
+            observerRef.current?.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: '50px',
+        threshold: 0.1
+      }
+    );
+
+    return () => {
+      observerRef.current?.disconnect();
+    };
+  }, []);
+
+  // 重置可见图片状态
+  useEffect(() => {
+    setVisibleImages([]);
+  }, [project?.id]);
+
   const nextImage = () => {
     const imagesLength = project?.images?.length || 0;
     if (imagesLength > 0) {
@@ -31,16 +61,15 @@ const ProjectDetail = () => {
     }
   };
 
-  const openFullscreen = () => {
+  const openFullscreen = (index: number) => {
+    setCurrentImageIndex(index);
     setFullscreenView(true);
     setZoomLevel(1);
-    pauseAutoPlay();
   };
 
   const closeFullscreen = () => {
     setFullscreenView(false);
     setZoomLevel(1);
-    startAutoPlay();
   };
 
   const zoomIn = () => {
@@ -50,42 +79,6 @@ const ProjectDetail = () => {
   const zoomOut = () => {
     setZoomLevel(prev => Math.max(prev - 0.2, 0.5));
   };
-
-  const startAutoPlay = () => {
-    if (autoPlayIntervalRef.current) {
-      clearInterval(autoPlayIntervalRef.current);
-    }
-    autoPlayIntervalRef.current = window.setInterval(() => {
-      nextImage();
-    }, 3000);
-  };
-
-  const pauseAutoPlay = () => {
-    if (autoPlayIntervalRef.current) {
-      clearInterval(autoPlayIntervalRef.current);
-      autoPlayIntervalRef.current = null;
-    }
-  };
-  
-  useEffect(() => {
-    // Start autoplay when component mounts
-    startAutoPlay();
-    
-    // Clean up interval on unmount
-    return () => {
-      if (autoPlayIntervalRef.current) {
-        clearInterval(autoPlayIntervalRef.current);
-      }
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-  
-  useEffect(() => {
-    // Reset zoom level when changing images in fullscreen view
-    if (fullscreenView) {
-      setZoomLevel(1);
-    }
-  }, [currentImageIndex, fullscreenView]);
   
   useEffect(() => {
     // 模拟从API获取项目数据
@@ -119,7 +112,8 @@ const ProjectDetail = () => {
             new URL('../assets/fandom/fandom12.jpg', import.meta.url).href,
             new URL('../assets/fandom/fandom13.jpg', import.meta.url).href,
           ],
-          mainImage: new URL('../assets/fandom/fandom04.jpg', import.meta.url).href,
+          mainImage: new URL('../assets/fandom/fandom04.jpg', import.meta.url)
+            .href,
         },
         {
           id: 2,
@@ -145,39 +139,61 @@ const ProjectDetail = () => {
             new URL('../assets/easTalk/easy23.jpg', import.meta.url).href,
             new URL('../assets/easTalk/easy24.jpg', import.meta.url).href,
           ],
-          mainImage: new URL('../assets/easTalk/easy15.jpg', import.meta.url).href,
+          mainImage: new URL('../assets/easTalk/easy15.jpg', import.meta.url)
+            .href,
         },
         {
           id: 3,
-          title: '电商网站设计',
+          title: 'fandomWeb',
           category: 'Web设计',
-          description: '为高端时尚品牌设计沉浸式购物体验',
+          description: '为粉丝社区设计的现代化网站',
           fullDescription:
-            '为一家高端时尚品牌设计的电商网站，注重产品展示和用户体验，创造沉浸式的在线购物环境。',
+            '为粉丝社区设计的现代化网站，注重用户体验和社区互动，创造沉浸式的在线交流环境。',
           challenge:
-            '在保持品牌高端形象的同时，提供流畅的购物体验和清晰的导航结构。',
+            '在保持网站功能完整的同时，提供流畅的用户体验和清晰的导航结构。',
           solution:
-            '采用了大图片布局和动态滚动效果，结合简约的界面设计，突出产品的质感和细节。',
-          result:
-            '网站转化率比行业平均水平高出30%，用户平均停留时间增加了2分钟。',
-          images: ['/project3-1.jpg', '/project3-2.jpg', '/project3-3.jpg'],
-          mainImage: '/project3-main.jpg',
+            '采用了大图片布局和动态滚动效果，结合简约的界面设计，突出社区特色。',
+          result: '网站用户活跃度提高了40%，社区互动增加了50%。',
+          images: [
+            new URL('../assets/fandomweb/fandomweb27.jpg', import.meta.url)
+              .href,
+          ],
+          mainImage: new URL('../assets/fandomweb/fandomweb26.jpg', import.meta.url)
+            .href,
         },
         {
           id: 4,
-          title: '数据可视化界面',
-          category: 'UI/UX',
-          description: '为金融分析平台设计直观的数据可视化界面',
+          title: '品牌设计',
+          category: '品牌设计',
+          description: '为新兴科技公司打造独特的品牌视觉系统',
           fullDescription:
-            '为一家金融科技公司设计的数据分析平台，帮助用户理解复杂的金融数据和市场趋势。',
+            '为一家新兴科技公司设计的完整品牌视觉系统，包括品牌标识、色彩系统、排版规范和视觉元素库。',
           challenge:
-            '将复杂的数据转化为易于理解的可视化图表，同时保持专业和准确性。',
+            '在竞争激烈的科技市场中创造独特且令人难忘的品牌形象，同时保持专业性和现代感。',
           solution:
-            '设计了一套清晰的数据可视化系统，包括自定义图表、交互式仪表板和实时数据更新功能。',
+            '通过深入研究目标受众和行业趋势，设计了一套既现代又独特的视觉语言，包括动态logo系统和创新的色彩方案。',
           result:
-            '平台用户数在三个月内增长了40%，客户反馈显示决策效率提高了25%。',
-          images: ['/project4-1.jpg', '/project4-2.jpg', '/project4-3.jpg'],
-          mainImage: '/project4-main.jpg',
+            '新品牌形象获得了行业广泛认可，品牌识别度提升了60%，客户转化率提高了40%。',
+          images: [
+            new URL('../assets/graphicDesign/graphicDesign30.jpg', import.meta.url).href,
+            new URL('../assets/graphicDesign/graphicDesign31.jpg', import.meta.url).href,
+            new URL('../assets/graphicDesign/graphicDesign32.jpg', import.meta.url).href,
+            new URL('../assets/graphicDesign/graphicDesign33.jpg', import.meta.url).href,
+            new URL('../assets/graphicDesign/graphicDesign34.jpg', import.meta.url).href,
+            new URL('../assets/graphicDesign/graphicDesign35.jpg', import.meta.url).href,
+            new URL('../assets/graphicDesign/graphicDesign36.jpg', import.meta.url).href,
+            new URL('../assets/graphicDesign/graphicDesign37.jpg', import.meta.url).href,
+            new URL('../assets/graphicDesign/graphicDesign38.jpg', import.meta.url).href,
+            new URL('../assets/graphicDesign/graphicDesign39.jpg', import.meta.url).href,
+            new URL('../assets/graphicDesign/graphicDesign40.jpg', import.meta.url).href,
+            new URL('../assets/graphicDesign/graphicDesign41.jpg', import.meta.url).href,
+            new URL('../assets/graphicDesign/graphicDesign42.jpg', import.meta.url).href,
+            new URL('../assets/graphicDesign/graphicDesign43.jpg', import.meta.url).href,
+            new URL('../assets/graphicDesign/graphicDesign44.jpg', import.meta.url).href,
+            new URL('../assets/graphicDesign/graphicDesign45.jpg', import.meta.url).href,
+            new URL('../assets/graphicDesign/graphicDesign46.jpg', import.meta.url).href,
+          ],
+          mainImage: new URL('../assets/graphicDesign/graphicDesign29.jpg', import.meta.url).href,
         },
         {
           id: 5,
@@ -338,42 +354,37 @@ const ProjectDetail = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
           >
             <h2>项目图片</h2>
-            {project.images && project.images.length > 0 ? (
-              <div className="carousel-container">
-                <button className="carousel-button prev" onClick={prevImage}>
-                  <span>&#10094;</span>
-                </button>
-                
-                <div className="carousel-content">
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={currentImageIndex}
-                      className="carousel-slide"
-                      initial={{ opacity: 0, x: 100 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: -100 }}
-                      transition={{ duration: 0.5 }}
-                    >
+            {project?.images && project.images.length > 0 ? (
+              <div className="gallery-grid">
+                {project.images.map((image, index) => (
+                  <div 
+                    className="gallery-item" 
+                    key={index}
+                    ref={el => {
+                      if (el && observerRef.current) {
+                        el.setAttribute('data-index', index.toString());
+                        observerRef.current.observe(el);
+                      }
+                    }}
+                  >
+                    {visibleImages.includes(index) ? (
                       <img 
-                        src={project.images[currentImageIndex]} 
-                        alt={`${project.title} - 图片 ${currentImageIndex + 1}`} 
-                        className="carousel-image"
-                        onClick={openFullscreen}
-                        style={{ cursor: 'zoom-in' }}
+                        src={image} 
+                        alt={`${project.title} - 图片 ${index + 1}`} 
+                        onClick={() => openFullscreen(index)}
+                        className="gallery-image"
+                        loading="lazy"
                       />
-                      <div className="image-counter">
-                        {currentImageIndex + 1} / {project.images.length}
+                    ) : (
+                      <div className="gallery-image-placeholder">
+                        <div className="loading-spinner small"></div>
                       </div>
-                    </motion.div>
-                  </AnimatePresence>
-                </div>
-                
-                <button className="carousel-button next" onClick={nextImage}>
-                  <span>&#10095;</span>
-                </button>
+                    )}
+                  </div>
+                ))}
               </div>
             ) : (
-              <div className="placeholder-carousel">
+              <div className="placeholder-gallery">
                 <div className="placeholder-image">
                   <span>暂无项目图片</span>
                 </div>

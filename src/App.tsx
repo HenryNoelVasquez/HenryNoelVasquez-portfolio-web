@@ -44,7 +44,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/project/:id" element={<ProjectDetail />} />
         </Routes>
-        <SplashCursor />
+        {/* <SplashCursor /> */}
       </Router>
     </ThemeProvider>
   )
