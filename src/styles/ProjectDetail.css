@@ -229,51 +229,6 @@
   border-radius: 8px;
 }
 
-.next-project {
-  margin-top: 100px;
-  text-align: center;
-}
-
-.next-project h3 {
-  font-size: 1.8rem;
-  font-weight: 600;
-  margin-bottom: 40px;
-  color: var(--text-color);
-  transition: color 0.3s ease;
-}
-
-.next-project-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-}
-
-@media (max-width: 768px) {
-  .next-project-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.next-project-item {
-  border-radius: 12px;
-  overflow: hidden;
-  background-color: var(--card-bg-color);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-}
-
-.next-project-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px var(--shadow-color);
-}
-
-.next-project-item h4 {
-  padding: 16px;
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: var(--text-color);
-  transition: color 0.3s ease;
-}
-
 /* Loading spinner */
 .project-detail-loading {
   display: flex;
