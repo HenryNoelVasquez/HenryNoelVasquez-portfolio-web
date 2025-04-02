@@ -15,6 +15,46 @@ const About = () => {
         >
           关于我
         </motion.h2>
+        
+        <div className="profile-overview">
+          <motion.div 
+            className="basic-info"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+          >
+            <div className="info-group">
+              <div className="info-item">
+                <span className="info-label">姓名：</span>
+                <span className="info-value">孙学圣</span>
+              </div>
+              <div className="info-item">
+                <span className="info-label">性别：</span>
+                <span className="info-value">男</span>
+              </div>
+              <div className="info-item">
+                <span className="info-label">年龄：</span>
+                <span className="info-value">22</span>
+              </div>
+            </div>
+          </motion.div>
+          
+          <motion.div
+            className="profile-photo-container"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+          >
+            <img 
+              src={selfImage} 
+              alt="个人照片" 
+              className="profile-image"
+            />
+          </motion.div>
+        </div>
+        
         <div className="about-content">
           <div className="about-text">
             <motion.div
@@ -23,6 +63,10 @@ const About = () => {
               viewport={{ once: true, margin: '-20%' }}
               transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
             >
+              <h3>设计哲学</h3>
+              <p>
+                我相信设计不仅仅是关于美学，更是关于解决问题和创造体验。每个项目都是一次探索用户需求和商业目标的旅程，通过设计找到平衡点。
+              </p>
 
               <h3>专业背景</h3>
               <p>
@@ -61,21 +105,6 @@ const About = () => {
               </div>
             </motion.div>
           </div>
-        </div>
-        <div className="about-image">
-          <motion.div
-            className="image-container"
-            initial={{ opacity: 0, scale: 0.8, y: 30 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            viewport={{ once: true, margin: '-10%' }}
-            transition={{ duration: 1, ease: 'easeOut' }}
-          >
-            <img 
-              src={selfImage} 
-              alt="个人照片" 
-              className="profile-image"
-            />
-          </motion.div>
         </div>
       </div>
     </section>

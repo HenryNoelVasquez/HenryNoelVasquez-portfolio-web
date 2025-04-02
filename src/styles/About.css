@@ -41,58 +41,37 @@
 }
 
 /* Profile image container and image styles */
-.profile-image-container {
-  width: 200px;
-  height: 200px;
-  margin: 0 auto 60px;
+.profile-photo-container {
+  flex: 1;
+  max-width: 180px;
+  margin: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  border-radius: 50%;
-  box-shadow: 0 10px 30px var(--shadow-color);
-  transition: box-shadow 0.3s ease;
 }
 
 .profile-image {
   width: 100%;
-  height: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 50%;
   box-shadow: 0 8px 24px var(--shadow-color);
   transition: transform 0.3s ease;
 }
 
 .profile-image:hover {
-  transform: scale(1.02);
+  transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
-  .profile-image {
-    border-radius: 8px;
+  .profile-photo-container {
+    margin: 0 auto;
   }
 }
 
 /* Personal information styles */
-.personal-info-container {
-  max-width: 800px;
-  margin: 0 auto 60px;
-  padding: 0 20px;
-}
-
-.personal-info-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-
-@media (max-width: 576px) {
-  .personal-info-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 .info-item {
+  margin-bottom: 15px;
   display: flex;
   align-items: center;
 }
@@ -100,12 +79,14 @@
 .info-label {
   font-weight: 600;
   color: var(--text-color);
-  margin-right: 8px;
+  font-size: 1.1rem;
+  min-width: 70px;
   transition: color 0.3s ease;
 }
 
 .info-value {
   color: var(--text-color-secondary);
+  font-size: 1.1rem;
   transition: color 0.3s ease;
 }
 
@@ -235,5 +216,52 @@
 
   .period {
     font-size: 0.85rem;
+  }
+}
+
+.profile-overview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 50px;
+  max-width: 800px;
+  gap: 40px;
+}
+
+.basic-info {
+  flex: 1;
+  padding: 20px;
+}
+
+.info-group {
+  background: var(--card-bg-color);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 8px 24px var(--shadow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-group:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px var(--shadow-color);
+}
+
+.info-item:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .profile-overview {
+    flex-direction: column-reverse;
+    gap: 30px;
+  }
+  
+  .basic-info {
+    width: 100%;
+    padding: 0;
+  }
+  
+  .profile-photo-container {
+    margin: 0 auto;
   }
 }
