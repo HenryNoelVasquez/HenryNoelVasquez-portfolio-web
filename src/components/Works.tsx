@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ProjectPreview } from '../types';
 import '../styles/Works.css';
-import ScrollFloat from '../components/ScrollFloat'
 
 
 const Works = () => {
@@ -47,15 +46,7 @@ const Works = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <ScrollFloat
-            animationDuration={1}
-            ease="back.inOut(2)"
-            scrollStart="center bottom+=10%"
-            scrollEnd="bottom bottom-=10%"
-            stagger={0.03}
-          >
-            精选作品
-          </ScrollFloat>
+          精选作品
         </motion.h2>
         <motion.p
           className="section-subtitle"

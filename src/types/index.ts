@@ -122,10 +122,6 @@ export interface ContactInfo {
   link?: string
 }
 
-export interface SocialLink {
-  icon: React.ReactNode
-  url: string
-}
 
 // Header组件相关类型
 export interface HeaderProps {

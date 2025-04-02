@@ -58,6 +58,19 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px var(--shadow-color);
+  transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+  .profile-image {
+    border-radius: 8px;
+  }
 }
 
 /* Personal information styles */
@@ -143,4 +156,84 @@
   overflow: hidden;
   box-shadow: 0 20px 80px var(--shadow-color);
   transition: box-shadow 0.3s ease;
+}
+
+.experience-item {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: var(--card-bg-color);
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px var(--shadow-color);
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.company {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.period {
+  font-size: 0.9rem;
+  color: var(--text-color-secondary);
+}
+
+.position {
+  font-size: 1rem;
+  color: var(--text-color-secondary);
+  margin-bottom: 1rem;
+}
+
+.responsibilities {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.responsibilities li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-color-secondary);
+}
+
+.responsibilities li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .experience-item {
+    padding: 1.2rem;
+  }
+
+  .experience-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .company {
+    font-size: 1.1rem;
+  }
+
+  .period {
+    font-size: 0.85rem;
+  }
 }
