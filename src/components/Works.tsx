@@ -26,14 +26,22 @@ const Works = () => {
       images: new URL('../assets/fandomweb/fandomweb26.jpg', import.meta.url)
         .href,
     },
-    { 
-      id: 4, 
-      title: '品牌设计', 
-      category: '品牌设计', 
-      images: new URL('../assets/graphicDesign/graphicDesign29.jpg', import.meta.url).href 
+    {
+      id: 4,
+      title: '品牌设计',
+      category: '品牌设计',
+      images: new URL(
+        '../assets/graphicDesign/graphicDesign29.jpg',
+        import.meta.url
+      ).href,
     },
     { id: 5, title: '社交媒体营销设计', category: '品牌设计', images: '' },
-    { id: 6, title: '响应式网站原型', category: 'Web设计', images: '' },
+    {
+      id: 6,
+      title: 'Logo设计',
+      category: '北京农学院动物医院等',
+      images: new URL('../assets/logo/logo1.jpg', import.meta.url).href,
+    },
   ]
 
   return (
