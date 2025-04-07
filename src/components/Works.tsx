@@ -16,12 +16,12 @@ const Works = () => {
     {
       id: 2,
       title: 'Easy Talk',
-      category: '品牌设计',
+      category: 'UI/UX',
       images: new URL('../assets/easTalk/easy15.jpg', import.meta.url).href,
     },
     {
       id: 3,
-      title: 'fandomWeb',
+      title: 'Fandom Web',
       category: 'Web设计',
       images: new URL('../assets/fandomweb/fandomweb26.jpg', import.meta.url)
         .href,
@@ -29,7 +29,7 @@ const Works = () => {
     {
       id: 4,
       title: '品牌设计',
-      category: '品牌设计',
+      category: '桂煮 烫捞·炸串',
       images: new URL(
         '../assets/graphicDesign/graphicDesign29.jpg',
         import.meta.url
