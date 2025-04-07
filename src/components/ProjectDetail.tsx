@@ -254,18 +254,33 @@ const ProjectDetail = () => {
         },
         {
           id: 5,
-          title: '社交媒体营销设计',
-          category: '品牌设计',
-          description: '为食品品牌设计引人注目的社交媒体营销材料',
+          title: '京东双十一 AI海报设计',
+          category: 'AIGC运用',
+          description: '运用AI技术为京东双十一活动设计创新营销海报',
           fullDescription:
-            '为一家新兴食品品牌设计的社交媒体营销材料，包括Instagram帖子、故事和广告素材。',
+            '为京东双十一购物节设计系列AI生成营销海报，将传统电商营销与前沿AI技术相结合，打造独特的视觉体验。项目运用Midjourney等AI工具，结合品牌调性和营销目标，创作出既符合京东品牌形象又具有创新性的营销物料。',
           challenge:
-            '在竞争激烈的社交媒体环境中创造独特且引人注目的视觉内容，提高品牌知名度。',
+            '项目面临多重挑战：1) 如何将AI生成内容与京东品牌调性完美融合；2) 在保持商业效果的同时展现AI技术的创新性；3) 确保AI生成内容的质量和一致性；4) 在有限时间内完成大量海报的生成和优化。',
           solution:
-            '开发了一套鲜明的视觉语言，结合生动的摄影和现代排版，创造出既美观又能传达品牌信息的内容。',
-          result: '品牌Instagram关注者在三个月内增长了200%，参与度提高了35%。',
-          images: ['/project5-1.jpg', '/project5-2.jpg', '/project5-3.jpg'],
-          mainImage: '/project5-main.jpg',
+            '采用系统化的AI设计方法：1) 建立详细的AI提示词库，确保生成内容符合品牌规范；2) 开发AI内容筛选和优化流程，保证输出质量；3) 结合人工设计经验，对AI生成内容进行精修和调整；4) 建立快速迭代机制，提高工作效率；5) 设计多套风格方案，满足不同场景需求。',
+          result:
+            '项目取得显著成果：1) 成功生成50+张高质量营销海报，效率提升300%；2) 海报在社交媒体获得超过100万次互动；3) 创新设计获得内部设计团队和营销团队一致好评；4) 为后续AI设计项目建立了标准化流程和最佳实践。',
+          images: [
+            new URL('../assets/aicg/1.webp', import.meta.url).href,
+            new URL('../assets/aicg/2.webp', import.meta.url).href,
+            new URL('../assets/aicg/3.webp', import.meta.url).href,
+            new URL('../assets/aicg/4.webp', import.meta.url).href,
+            new URL('../assets/aicg/5.webp', import.meta.url).href,
+            new URL('../assets/aicg/6.webp', import.meta.url).href,
+            new URL('../assets/aicg/7.webp', import.meta.url).href,
+            new URL('../assets/aicg/8.webp', import.meta.url).href,
+            new URL('../assets/aicg/9.webp', import.meta.url).href,
+            new URL('../assets/aicg/10.webp', import.meta.url).href,
+            new URL('../assets/aicg/11.webp', import.meta.url).href,
+            new URL('../assets/aicg/12.webp', import.meta.url).href,
+            new URL('../assets/aicg/13.webp', import.meta.url).href,
+          ],
+          mainImage: new URL('../assets/aicg/cover.jpg', import.meta.url).href,
         },
         {
           id: 6,

@@ -35,7 +35,12 @@ const Works = () => {
         import.meta.url
       ).href,
     },
-    { id: 5, title: '社交媒体营销设计', category: '品牌设计', images: '' },
+    {
+      id: 5,
+      title: '京东双十一 AI海报设计',
+      category: 'AIGC运用',
+      images: new URL('../assets/aicg/cover.jpg', import.meta.url).href,
+    },
     {
       id: 6,
       title: 'Logo设计',
