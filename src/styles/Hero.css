@@ -211,35 +211,8 @@
   }
 }
 
-.hero-image {
-  flex: 1;
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-  will-change: transform, opacity;
-}
 
-.image-container {
-  border-radius: 16px;
-  overflow: hidden;
-  transform: translateZ(0);
-  will-change: transform, opacity;
-  transition: box-shadow 0.3s ease;
-}
 
-.placeholder-image {
-  width: 100%;
-  aspect-ratio: 16/9;
-  background: linear-gradient(135deg, #333, var(--bg-color-secondary));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-color-secondary);
-  font-size: 1.2rem;
-  border: 1px dashed var(--border-color);
-  transform: translateZ(0);
-  transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
-}
 
 .hero-actual-image {
   width: 100%;

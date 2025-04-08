@@ -49,19 +49,6 @@ const Hero = () => {
             </a>
           </motion.div>
         </div>
-        <div className="hero-image">
-          <motion.div
-            className="image-container"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1], delay: 0.4 }}
-          >
-            {/* 这里预留放置主图的位置 */}
-            <div className="placeholder-image">
-              <span>设计作品展示</span>
-            </div>
-          </motion.div>
-        </div>
       </div>
     </section>
   )
