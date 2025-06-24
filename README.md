@@ -9,7 +9,7 @@ A modern, responsive portfolio website showcasing creative design and digital pr
 
 ## 🌐 Live Demo
 
-🔗 **Live Preview**: [http://101.37.85.94:8889/](http://101.37.85.94:8889/)
+🔗 **Live Preview**: [http://www.irving-design.top/](http://www.irving-design.top/)
 
 You can experience the website directly through the link above, no local deployment needed!
 
@@ -57,7 +57,7 @@ src/
 
 ## 🌐 在线预览
 
-🔗 **项目预览地址**: [http://101.37.85.94:8889/](http://101.37.85.94:8889/)
+🔗 **项目预览地址**: [http://www.irving-design.top/](http://www.irving-design.top/)
 
 通过上面的链接，您可以直接体验网站的实际效果，无需本地部署！
 
